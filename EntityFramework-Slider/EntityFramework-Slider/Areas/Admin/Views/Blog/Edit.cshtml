@@ -1,0 +1,45 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container my-5">
+
+    <div class="mt-5" style="width:200px;height:250px;">
+        <img style="width:100%;height:100%;" src="~/img/@Model.Image" />
+    </div>
+<div class="container my-5">
+    <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Photo</label>
+            <input type="file" class="form-control" id="customFile" asp-for="Photo" />
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Title</label>
+            <input type="text" class="form-control" id="customFile" asp-for="Header" />
+            <span class="text-danger" asp-validation-for="Header"></span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Description</label>
+            <input type="text" class="form-control" id="customFile" asp-for="Description" />
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Date</label>
+            <input type="date" class="form-control" id="customFile" asp-for="Date" />
+            <span class="text-danger" asp-validation-for="Date"></span>
+        </div>
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+
+</div>

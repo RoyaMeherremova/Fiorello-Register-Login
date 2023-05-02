@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ExpertsHeader>
+
+@{
+    ViewData["Title"] = "ExpertsHeader";
+}
+
+<div class="container my-5">
+    <a class="btn btn-success text-white" asp-action="Create" style="float:right">Create</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var expertHeader in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @expertHeader.Title
+                        </td>
+                        <td>
+                            @expertHeader.Description
+                        </td>
+                        <td style="display: flex; gap: 10px;">
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@expertHeader.Id">Info</a>
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@expertHeader.Id">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@expertHeader.Id" method="post">
+                                @*Delete burada form yazirq yalniz, cunku Deletein seyfesi yoxdu burda submit olur.ama obirler gedir viewda submit olur*@
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

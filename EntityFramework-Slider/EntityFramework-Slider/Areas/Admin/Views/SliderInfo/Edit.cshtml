@@ -1,0 +1,52 @@
+﻿@model SliderInfoUpdateVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container my-5">
+
+    <div class="mt-5" style="width:200px;height:250px;">
+        <img style="width:100%;height:100%;" src="~/img/@Model.SignatureImage" />
+    </div>
+    <div class="container my-5">
+        <form class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+            <div class="mt-5">
+                <label for="formFile" class="form-label">Add Photo</label>
+                <input type="file" class="form-control" id="customFile" asp-for="Photo" />
+                <span class="text-danger" asp-validation-for="Photo"></span>
+            </div>
+
+            <div class="mt-5">
+                <label for="formFile" class="form-label">Add Title</label>
+                <textarea class="form-control" id="category-text" asp-for="Title" rows="5"></textarea>
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="mt-5">
+                <label for="formFile" class="form-label">Add Description</label>
+                <input type="text" class="form-control" id="customFile" asp-for="Description" />
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+            <div class="buttons my-3">
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a class="btn btn-light" asp-action="Index">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/ckeditor/ckeditor.js"></script>  @*checkeditor script-yeni yaz elave edende tagnan yaransin deye istifade olunur*@
+    <script>
+        CKEDITOR.replace("category-text")   /*text-areani CKEDITOR-LA evezle*/
+    </script>
+
+ }
+
+

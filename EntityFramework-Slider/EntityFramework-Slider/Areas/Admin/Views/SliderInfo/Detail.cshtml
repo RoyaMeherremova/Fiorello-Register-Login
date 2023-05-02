@@ -1,0 +1,31 @@
+﻿@model SliderInfo
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5">
+    <h1 class="text-center">Expert detail</h1>
+    <div style="display:flex;gap:30px">
+
+        <div class="blog-content" style="width:200px;height:250px;">
+            <label for="formFile" class="form-label">Photo</label>
+            <img style="width:100%;height:100%;" src="~/img/@Model.SignatureImage" />
+        </div>
+        <div>
+            <div>
+                <label for="formFile" class="form-label">Title</label>
+                <input class="form-control" type="text" id="formFile" asp-for="Title" disabled="disabled">
+            </div>
+            <div style="margin-top:30px">
+                <label for="formFile" class="form-label">Description</label>
+                <input class="form-control" type="text" id="formFile" asp-for="Description" disabled="disabled">
+            </div>
+
+        </div>
+    </div>
+    <a class="btn btn-info mt-5" asp-action="Index">Back</a>
+</div>
+
+
+
+

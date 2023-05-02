@@ -1,0 +1,27 @@
+﻿@*Partial- kod tekrari seyfelerde  olmasin deye istifade edirik,html burada yazib seyfelerde cagirirq*@
+
+@model IEnumerable<Product>
+@foreach (var product in Model)
+{
+    <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="product-item text-center" data-id="@product.CategoryId">
+            <div class="img">
+                <a href="">
+                    @*FirstOrDefault.Image-table icindeki imageler-name*@
+                    @* FirstOrDefault(m=>m.IsMain)?-tablda IsMain(yani esas)=true olan datalari ver *@     @*?-yani productun Id-si ProductImage tableda olmayada biler varsa .Image qoyub hemin productun seklin adin verir*@
+                    <img src="~/img/@product.Images.FirstOrDefault(m=>m.IsMain)?.Image" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="title mt-3">
+                <h6>@product.Name</h6>
+            </div>
+            <div class="price">
+                <form  data-id="@product.Id">  @*method="post"-yaziriq bize Tooken qaytarir-xeslenmis data*@
+                   <button class="btn btn-primary add-basket">Add to card</button>                  
+                </form>
+                
+                <span class="text-black-50">$@product.Price</span>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,15 @@
+﻿@model ExpertsHeader
+@*Category tipde qayidir actiona*@
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="container my-5">
+
+
+        <input type="text" class="form-control" id="customFile" asp-for="Title" disabled="disabled" />  @*asp-for-Modelin icindekilerin adi ile eyni olamlidi(table-colum)*@  @*form submit olanda inputa yazdiqimiz Model-tipinde qayidir actiona*@
+    <input type="text" style="margin-top:10px;" class="form-control" id="customFile" asp-for="Description" disabled="disabled" />
+        <a class="btn btn-light mt-3" asp-action="Index">Cancel</a>
+
+
+
+</div>

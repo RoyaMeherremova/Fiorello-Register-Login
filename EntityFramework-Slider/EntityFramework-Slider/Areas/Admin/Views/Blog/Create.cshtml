@@ -1,0 +1,44 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container my-5">
+    <form class="forms-sample" asp-action="Create" method="post" enctype="multipart/form-data">
+        
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Photo</label>
+            <input type="file" class="form-control" id="customFile" asp-for="Photo" />
+            <span class="text-danger" asp-validation-for="Photo">@ViewBag.error</span>
+        </div>
+    
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Title</label>
+            <input type="text" class="form-control" id="customFile" asp-for="Header" />
+            <span class="text-danger" asp-validation-for="Header">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Description</label>
+            <input type="text" class="form-control" id="customFile" asp-for="Description" />
+            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label">Add Date</label>
+            <input type="date" class="form-control" id="customFile" asp-for="Date" />
+            <span class="text-danger" asp-validation-for="Date">@ViewBag.error</span>
+        </div>
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+
+ }
